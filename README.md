@@ -33,8 +33,20 @@ MediFund addresses the gaps in healthcare funding by creating a secure and effic
 
 The MediFund platform is powered by a smart contract built using Solidity, ensuring secure and automated transactions. The contract manages campaigns, donations, and fund distribution.
 
+##To install dependencies:
+
+cd dapp-scaffold
+npm install
+
+cd medifund
+npm install
+
+
+##Note
+Although it was an existing idea, the entire code base was recreated.
+
 The current deployment can be found on:
-https://medifund.pythonanywhere.com/
+https://medifund-sol.vercel.app/
 
 The onchain program (Solana Devnet) can be found on:
 https://explorer.solana.com/address/5qfbwtS1Xn7GxsSAcFbbgGKFPvUUAoKV1HMYqnZCGo2U?cluster=devnet
