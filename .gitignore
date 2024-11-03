@@ -1,0 +1,8 @@
+# Node modules
+dapp-scaffold/node_modules
+
+# Rust build files
+backend-anchor/target
+
+# Environment variables
+*.env

@@ -1,0 +1,230 @@
+{
+  "address": "5qfbwtS1Xn7GxsSAcFbbgGKFPvUUAoKV1HMYqnZCGo2U",
+  "metadata": {
+    "name": "medifund",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "add_hospital",
+      "discriminator": [
+        132,
+        223,
+        70,
+        105,
+        5,
+        72,
+        151,
+        19
+      ],
+      "accounts": [
+        {
+          "name": "hospital",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "address",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "create_campaign",
+      "discriminator": [
+        111,
+        131,
+        187,
+        98,
+        160,
+        193,
+        114,
+        244
+      ],
+      "accounts": [
+        {
+          "name": "campaign",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "hospital",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "patient_details",
+          "type": "string"
+        },
+        {
+          "name": "required_amount",
+          "type": "u64"
+        },
+        {
+          "name": "hospital",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "donate",
+      "discriminator": [
+        121,
+        186,
+        218,
+        211,
+        73,
+        70,
+        196,
+        180
+      ],
+      "accounts": [
+        {
+          "name": "campaign",
+          "writable": true
+        },
+        {
+          "name": "hospital",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "verify_campaign",
+      "discriminator": [
+        26,
+        153,
+        246,
+        229,
+        1,
+        243,
+        41,
+        31
+      ],
+      "accounts": [
+        {
+          "name": "campaign",
+          "writable": true
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Campaign",
+      "discriminator": [
+        50,
+        40,
+        49,
+        11,
+        157,
+        220,
+        229,
+        192
+      ]
+    },
+    {
+      "name": "Hospital",
+      "discriminator": [
+        150,
+        59,
+        177,
+        217,
+        93,
+        234,
+        181,
+        75
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "Campaign",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "patient_details",
+            "type": "string"
+          },
+          {
+            "name": "required_amount",
+            "type": "u64"
+          },
+          {
+            "name": "total_donated",
+            "type": "u64"
+          },
+          {
+            "name": "verified",
+            "type": "bool"
+          },
+          {
+            "name": "hospital",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hospital",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "address",
+            "type": "pubkey"
+          }
+        ]
+      }
+    }
+  ]
+}

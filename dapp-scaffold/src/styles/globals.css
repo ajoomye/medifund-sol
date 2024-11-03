@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-image: radial-gradient(
+    circle farthest-side at 50% 100%,rgba(1, 9, 18, 0),
+    rgba(1, 6, 14, 0.6) 36%,
+    rgba(1, 14, 29, 0.6) 55%,
+    rgba(49, 18, 93, 0.4));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* example: override wallet button style */
+.wallet-adapter-button:not([disabled]):hover {
+  background-color: #707070;
+}
+
+
+form input, form button {
+  color: black; /* Change this to white if you're using a dark background */
+  background-color: white; /* Optional: Ensure the background is a contrasting color */
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input::placeholder {
+  color: #888; /* Make placeholder text visible as well */
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
+}

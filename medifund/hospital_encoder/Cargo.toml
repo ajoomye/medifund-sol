@@ -1,0 +1,9 @@
+[package]
+name = "hospital_encoder"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hex = "0.4"  # or the latest compatible version
+bs58 = "0.4"
+borsh = "0.9"
